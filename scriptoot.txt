@@ -1,0 +1,9 @@
+WRI #TOOT:Start:val -> Write "val" at A
+JMP #TOOT:Start -> Jump to A
+JEQ #TOOT_A:Start:End:#TOOT_B:Start:End -> Jump to A if A = B
+JNQ #TOOT_A:Start:End:#TOOT_B:Start:End -> Jump to A if A != B
+JGT #TOOT_A:Start:End:#TOOT_B:Start:End -> Jump to A if A > B
+JLT #TOOT_A:Start:End:#TOOT_B:Start:End -> Jump to A if A < B
+SUM #TOOT_A:Start:End:#TOOT_B:Start:End:#TOOT_C:Start -> Sum A to B and write to C
+MUL #TOOT_A:Start:End:#TOOT_B:Start:End:#TOOT_C:Start -> Mul A to B and write to C
+CON #TOOT_A:Stard:End:#TOOT_B:Start:End:#TOOT_C:Start -> Concatenate A and B and write to C
