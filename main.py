@@ -24,9 +24,9 @@ if __name__ == "__main__":
 	except IOError:
 		print("config.json not found")
 		quit()
-	
+	#print(config["host"],config["database"],config["user_database"],config["password_database"])
 	try:
-		conn = psycopg2.connect(host=config["host"],database=config["database"],user=config["user"],password=config["password_database"])
+		conn = psycopg2.connect(host=config["host"],database=config["database"],user=config["user_database"],password=config["password_database"])
 		print("CONNECTION OK")
 	except:
 		print("ERROR CONNECTING TO DATABASE")
@@ -47,8 +47,6 @@ if __name__ == "__main__":
 			delta = x['last_status']['created_at'].replace(tzinfo=None)
 			
 			if delta.timestamp() > last.timestamp():
-
-				#print("UPDATE ListEval SET eval = '"+str(delta)+"' WHERE node =1;")
 				cur.execute("UPDATE ListEval SET eval = '"+str(delta)+"' WHERE node =1;")
 				conn.commit()
 				

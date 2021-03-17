@@ -10,9 +10,9 @@ except IOError:
 
 '''
 Mastodon.create_app(
-     'scriptoot',
-     api_base_url = config["api_base_url"],
-     to_file = 'scriptoot.secret'
+	'scriptoot',
+	api_base_url = config["api_base_url"],
+	to_file = 'scriptoot.secret'
 )
 '''
 

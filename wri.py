@@ -9,25 +9,27 @@ def wri(variable,index,new_text):
 	parser_cursor = 0
 	found_content = ""
 	found_content,toot_id = search_toot(variable)
-	# for toot in status:
-		# if(len(toot['tags']) > 0):
-			# parser_cursor = toot['content'].index("</a>")
-			# found_content = toot['content'][parser_cursor+5:]
-			# break
+	
+	if len(found_content) < index +1:
+		found_content.extend(['']*((index +1) - len(found_content)))
+	
+	found_content[index] = new_text
+	
+	new_toot = variable
 
-	mastodon.status_delete(toot_id)
+	for row in found_content:
+		new_toot += "\n"+row
+	
+	if toot_id:
+		mastodon.status_delete(toot_id)
+	mastodon.status_post(new_toot)
 
-	if index > len(found_content):
-		for x in range(0,index-len(found_content)):
-			found_content += " "
-			
-	found_content = variable+" "+found_content[:index]+new_text+found_content[index+len(new_text):]
-	mastodon.status_post(found_content)
+	return
+
+if __name__ == "__main__":
+	wri("#test",5,"ABC")
 
 	# example
 	# variable = "#test"
-	# new_text = 'abcde'
 	# index = 7
-
-if __name__ == "__main__":
-	wri("#test",5,"123")
+	# new_text = 'abcde'
