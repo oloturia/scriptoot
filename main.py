@@ -24,7 +24,6 @@ if __name__ == "__main__":
 	except IOError:
 		print("config.json not found")
 		quit()
-	#print(config["host"],config["database"],config["user_database"],config["password_database"])
 	try:
 		conn = psycopg2.connect(host=config["host"],database=config["database"],user=config["user_database"],password=config["password_database"])
 		print("CONNECTION OK")

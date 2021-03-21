@@ -6,9 +6,15 @@ def wri(variable,index,new_text):
 	mastodon = login.login()
 	
 	status = mastodon.search(variable)['statuses']
+
+	
 	parser_cursor = 0
 	found_content = ""
 	found_content,toot_id = search_toot(variable)
+
+	if index == -1:
+		mastodon.status_delete(toot_id)
+		return
 	
 	if len(found_content) < index +1:
 		found_content.extend(['']*((index +1) - len(found_content)))

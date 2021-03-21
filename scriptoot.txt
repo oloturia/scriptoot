@@ -1,10 +1,16 @@
 WRI #TOOT:Index:val -> Write "val" at A
+DEL #TOOT -> Write blank TOOT
+ADD #TOOT_A:#TOOT_B:Index -> Append B at A
+
 JMP #TOOT:Index -> Jump to A
 JEQ #TOOT_A:Index:#TOOT_B:Index:#TOOT_C:Index -> Jump to C if A = B
 JNQ #TOOT_A:Index:#TOOT_B:Index:#TOOT_C:Index -> Jump to C if A != B
+
 JGT #TOOT_A:Index:#TOOT_B:Index:#TOOT_C:Index -> Jump to C if A > B
 JLT #TOOT_A:Index:#TOOT_B:Index:#TOOT_C:Index -> Jump to C if A < B
 SUM #TOOT_A:Index:#TOOT_B:Index:#TOOT_C:Index -> Sum A to B and write to C
 MUL #TOOT_A:Index:#TOOT_B:Index:#TOOT_C:Index -> Mul A to B and write to C
-CPY #TOOT_A:Index:#TOOT_B:Index -> Copy A to B
 CON #TOOT_A:Index:#TOOT_B:Index:#TOOT_C:Index -> Concatenate A and B and write to C
+
+CPY #TOOT_A:Index:#TOOT_B:Index -> Copy A to B
+
