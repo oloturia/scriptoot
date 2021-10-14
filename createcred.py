@@ -22,7 +22,7 @@ mastodon = Mastodon(
 )
 
 mastodon.log_in(
-	config["user"]ls,
+	config["user"],
 	config["password_user"],
 	to_file = 'scriptoot.cred.secret'
 )
