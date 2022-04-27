@@ -1,0 +1,9 @@
+{
+	"host": "<ip address>",
+	"api_base_url": "http://<ip address>:4000",
+	"database": "<dbname>",
+	"user_database": "<dbusername>",
+	"password_database": "<dbpassword>",
+	"user": "<user>",
+	"password_user": "<pw user>"
+}
