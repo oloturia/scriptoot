@@ -2,3 +2,4 @@ config.json
 scriptoot.cred.secret
 scriptoot.secret
 __pycache__
+testconn.py
